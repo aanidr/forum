@@ -1,0 +1,6 @@
+- flash.each do |_, msg|
+	- if msg.kind_of?(Array)
+		- msg.each do |m|
+			.flash_tag= m
+	- else
+		.flash_tag= msg

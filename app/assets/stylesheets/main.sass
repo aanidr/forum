@@ -1,0 +1,99 @@
+$bgn_color: lightgray
+
+=form_inputs
+	outline: none
+	border-color: $bgn_color
+	border-radius: 5px
+
+*
+	box-sizing: border-box
+	padding: 0
+	margin: 0
+
+h1
+	padding: 1em 0 1em 2em
+	color: dimgray
+	background-color: white
+
+#menu_bar
+	margin-bottom: 1vh
+	ul
+		list-style: none
+		overflow: hidden
+		background-color: lightgray
+		li
+			float: left
+			a
+				display: block
+				padding: 1em 2em
+				background-color: lightgray
+				color: white
+				text-decoration: none
+				font-family: arial
+				&:hover
+					background-color: darkgray
+				&:active
+					background-color: dimgray
+
+.text
+	background-color: ghostwhite
+	color: black
+	padding: 1em
+	font-size: 2vw
+
+.text + .text
+	padding-top: 0
+
+form
+	width: 35vw
+	background-color: ghostwhite
+	margin: 0 auto
+	*
+		width: 100%
+		padding: 0.5em 
+	p
+		color: dimgray
+		font-family: arial
+	input
+		+form_inputs
+	input:focus
+		background-color: whitesmoke
+	input[type=submit]
+		background-color: lightgray
+		color: white
+		font-size: 1rem
+		&:hover
+			background-color: darkgray
+		&:active
+			background-color: dimgray
+	textarea
+		+form_inputs
+
+#posts
+	list-style:none
+	li
+		padding: 0.5em 1em
+		a
+			display: block
+			float: right
+			padding: 0 1vw
+			text-decoration: none
+	li:nth-child(even)
+		background-color: beige
+	li:nth-child(odd)
+		background-color: ghostwhite
+
+#topics	
+
+.flash_tag
+	background-color: red
+	color: black
+	text-transform: uppercase
+	padding: 0.5em
+	padding-left: 32.5vw
+
+.flash_tag:first
+	margin-top: 0.5em
+
+.flash_tag:last
+	margin-bottom: 0.5em

@@ -1,0 +1,12 @@
+%h1 Create new topic
+
+= render 'application/menu'
+= render 'application/flash'
+
+= form_with model: @topic, local: true do |form|
+	%p
+		= form.label 'Name of the topic'
+		%br/
+		= form.text_field :name
+
+	= form.submit

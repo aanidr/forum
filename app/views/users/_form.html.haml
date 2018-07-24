@@ -1,0 +1,23 @@
+= form_with model: @user, local: true do |form|
+	%p
+		= form.label 'Name'
+		%br/
+		= form.text_field :name
+
+	%p
+		= form.label 'Email'
+		%br/
+		= form.text_field :email
+
+	%p
+		= form.label 'Password'
+		%br/
+		= form.password_field :password
+
+	%p
+		= form.label 'Confirm password'
+		%br/
+		= form.password_field :password_confirmation
+
+	= form.submit
+

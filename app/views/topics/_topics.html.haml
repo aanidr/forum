@@ -1,0 +1,5 @@
+%ol
+	- topics.each do |topic|
+		%li
+			= topic.name
+			= link_to 'Read', topic_path(topic)

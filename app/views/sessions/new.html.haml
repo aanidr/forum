@@ -1,0 +1,17 @@
+%h1 Log in
+
+= render 'application/menu'
+= render 'application/flash'
+
+= form_with url: 'create', local: true do |form|
+	%p
+		= form.label 'Name'
+		%br/
+		= form.text_field :name
+
+	%p
+		= form.label 'Password'
+		%br/
+		= form.password_field :password
+
+	= form.submit 'Log in'

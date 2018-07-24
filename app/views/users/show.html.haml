@@ -1,0 +1,10 @@
+%h1= "Hi #{@user.name}!"
+
+= render 'application/menu'
+
+.text 'Here is the list of your topics:'
+#topics= render 'topics/topics', topics: @user.topics	
+
+=	link_to 'Edit account', edit_user_path(@user)
+%br/
+= link_to 'Delete account', user_path(@user), method: :delete

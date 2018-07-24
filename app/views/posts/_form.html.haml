@@ -1,0 +1,7 @@
+= form_with model: [@topic, @topic.posts.build] do |form|
+	= form.label 'New post: '
+	%br/
+	= form.text_area :body
+	= form.hidden_field :user_id, value: current_user.id
+	= form.hidden_field :topic_id, value: @topic.id
+	= form.submit 'Post it!'
