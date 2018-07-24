@@ -2,7 +2,7 @@
 
 = render 'application/menu'
 
-.text 'Here is the list of your topics:'
+.text Here is the list of your topics:
 #topics= render 'topics/topics', topics: @user.topics	
 
 .link=	link_to 'Edit account', edit_user_path(@user), class: 'link'
