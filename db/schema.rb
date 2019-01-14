@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_16_094151) do
+ActiveRecord::Schema.define(version: 2019_01_14_033043) do
 
   create_table "posts", force: :cascade do |t|
     t.text "body"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 2018_07_16_094151) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_topics_on_user_id"
+  end
+
+  create_table "user_details", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "address_line_1"
+    t.string "address_line_2"
+    t.string "address_line_3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_details_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
