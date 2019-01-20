@@ -1,4 +1,4 @@
-= form_with model: @user, local: true do |form|
+= form_with model: @user_form, local: true do |form|
 	%p
 		= form.label 'Name'
 		%br/
@@ -18,6 +18,18 @@
 		= form.label 'Confirm password'
 		%br/
 		= form.password_field :password_confirmation
+	%p
+		= form.label 'Address line 1'
+		%br/
+		= form.text_field :address_line_1
+	%p
+		= form.label 'Address line 2'
+		%br/
+		= form.text_field :address_line_2
+	%p
+		= form.label 'Address line 3'
+		%br/
+		= form.text_field :address_line_3
 
 	= form.submit
 
