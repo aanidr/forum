@@ -5,12 +5,6 @@ class UsersController < ApplicationController
 		@user_form = UserForm.new
 	end
 
-	def create
-		@user_form = UserForm.new(user_params)
-		@user_form.log_in
-		respond_with @user_form, location: root_path
-	end
-
 	def show
 		@user = current_user
 	end
