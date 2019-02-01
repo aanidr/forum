@@ -2,18 +2,7 @@ class UsersController < ApplicationController
 	before_action :logged_in, except: [:new, :create]
 
 	def new
-		@user = User.new
-	end
-
-	def create
-		@user = User.new(user_params)
-		if @user.save
-			log_in @user
-			redirect_to '/'
-		else
-			flash[:danger] = @user.errors.full_messages  if @user.errors.any?
-			redirect_to new_user_path
-		end
+		@user_form = UserForm.new
 	end
 
 	def show

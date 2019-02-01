@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 	get 'forum/index'
 
-	resources :users
+  resources :users, except: [:create]
+  resources :user_forms, only: [:create]
 
 	resources :topics do
 		resources :posts
-	end
+  end
 
 	get 'sessions/new', to: 'sessions#new'
 	post 'sessions/create', to: 'sessions#create'
