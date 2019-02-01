@@ -1,9 +1,6 @@
 %ul
-	- @topic.posts.each do |post|
-		%li
-			- user = User.find_by(id: post.user_id)
-			= user.name if user
-			- if logged_in? and current_user.id == post.user_id
-				= link_to 'delete', topic_post_path(post), method: :delete
-				= link_to 'edit', edit_topic_post_path(post)
-			%p.text= post.body
+  - @posts.each do |post|
+    %li
+      = post.user.name
+      = post.delete_and_edit_links
+      %p.text= post.body
