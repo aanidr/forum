@@ -1,34 +1,9 @@
-= form_for @user_form, local: true do |form|
-	%p
-		= form.label 'Name'
-		%br/
-		= form.text_field :name
-
-	%p
-		= form.label 'Email'
-		%br/
-		= form.text_field :email
-
-	%p
-		= form.label 'Password'
-		%br/
-		= form.password_field :password
-
-	%p
-		= form.label 'Confirm password'
-		%br/
-		= form.password_field :password_confirmation
-	%p
-		= form.label 'Address line 1'
-		%br/
-		= form.text_field :address_line_1
-	%p
-		= form.label 'Address line 2'
-		%br/
-		= form.text_field :address_line_2
-	%p
-		= form.label 'Address line 3'
-		%br/
-		= form.text_field :address_line_3
-
-	= form.submit 'Create Account'
+= simple_form_for @user_form do |form|
+  = form.input :name, required: true, input_html: { maxlength: 20 }
+  = form.input :email, required: true
+  = form.input :password, required: true
+  = form.input :password_confirmation, required: true
+  = form.input :address_line_1
+  = form.input :address_line_2
+  = form.input :address_line_3
+  = form.submit 'Create Account'
