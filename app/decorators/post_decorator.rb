@@ -17,4 +17,8 @@ class PostDecorator < Draper::Decorator
       link_to 'edit', edit_topic_post_path(post)
     end
   end
+
+  def user_name
+    User.find_or_nil(object.user_id).name
+  end
 end

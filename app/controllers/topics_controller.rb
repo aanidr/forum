@@ -19,7 +19,7 @@ class TopicsController < ApplicationController
 	end
 
 	def show
-    @topic = Topic.find(params[:id])
+    @topic = Topic.find_or_nil(params[:id])
     @posts = PostDecorator.decorate_collection(@topic.posts)
 	end
 

@@ -1,6 +1,6 @@
 %ul
   - @posts.each do |post|
     %li
-      = post.user.name
+      = post.user_name
       = post.delete_and_edit_links
       %p.text= post.body
