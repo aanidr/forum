@@ -4,7 +4,7 @@ class UserForm
   validates :name, length: {minimum: 6}
   validates :password, length:{minimum: 6}
   
-  attr_accessor :name, :email, :password, :password_confirmation, :address_line_1, :address_line_2, :address_line_3
+  attr_accessor :name, :email, :password, :password_confirmation, :address_line_1, :address_line_2, :address_line_3, :avatar
 
   def save
     return false if invalid?
@@ -14,6 +14,8 @@ class UserForm
 
   def user
     @user ||= User.new(name: name, email: email, password: password, password_confirmation: password_confirmation)
+    @user.avatar.attach(avatar)
+    @user
   end
 
   def user_detail

@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :topics
   has_many :posts
   has_one :user_detail
+  has_one_attached :avatar
 end
